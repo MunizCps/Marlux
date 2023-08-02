@@ -1,0 +1,132 @@
+import React from "react";
+import panelaTradicional from "../assets/panela_tradicional.png";
+import panelaLongaVida from "../assets/panela_longaVida.png";
+import panelaIndustrial from "../assets/panela_industrial.png";
+import panelaHotel from "../assets/panela_hotel.png";
+import panelaMarflon from "../assets/panela_marflon.png";
+import panelaFundida from "../assets/panela_fundida.png";
+import panelaCaboMadeira from "../assets/panela_caboMadeira.png";
+import panelaExtra from "../assets/panela_extra.png";
+import panelaPresente from "../assets/panela_presente.png";
+import vision from "../assets/Vision.jpeg";
+import tampaVidro from "../assets/linhaTampaDeVidro1.jpg";
+import pressao from "../assets/linhaPressao1.jpg";
+
+import { Fade, Reveal } from "react-reveal";
+
+const Products = () => {
+  const products = PRODUCTS.products;
+
+  return (
+    <div
+      className="
+                grid grid-cols-1 gap-x-36 gap-y-14 mx-10 items-center 
+                justify-center 
+                sm:grid-cols-1 sm:mx-10 
+                md:mx-10 md:grid-cols-2
+                lg:mx-28 lg:grid-cols-3 lg:gap-x-10 
+            "
+    >
+      {products.map((item, index) => (
+        <Reveal key={index}>
+          <Fade bottom big>
+            <a href={item.name1}>
+              <div className="h-full">
+                <button className="bg-white w-full h-full drop-shadow-2xl rounded-md transition ease-in-out hover:-translate-y-1 hover:scale-110">
+                  <div className="w-full p-7 items-center flex flex-col">
+                    <img
+                      src={item.image_url}
+                      alt=""
+                      className="w-full h-48 object-contain"
+                    />
+
+                    <div className="w-full mt-10 flex flex-col items-center h-full">
+                      <span className="font-poppins font-bold text-preto text-2xl p-1 -mb-2">
+                        LINHA
+                      </span>
+                      <span className="font-poppins font-semibold text-preto text-2xl p-1 max-w-max before:block before:absolute before:transform before:translate-y-3 before:inset-0 before:inset-y-2 before:bg-[#FFE719] relative inline-block before:-z-10">
+                        {item.name}
+                      </span>
+                      <span className="font-poppins font-light text-base text-preto">
+                        {item.description || "\u00A0"}
+                      </span>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </a>
+          </Fade>
+        </Reveal>
+      ))}
+    </div>
+  );
+};
+
+export default Products;
+
+const PRODUCTS = {
+  products: [
+    {
+      name: "TRADICIONAL",
+      name1: "TRADICIONAL",
+      image_url: panelaTradicional,
+    },
+    {
+      name: "LONGA VIDA",
+      name1: "LONGA VIDA",
+      image_url: panelaLongaVida,
+    },
+    {
+      name: "INDUSTRIAL",
+      name1: "INDUSTRIAL",
+      image_url: panelaIndustrial,
+    },
+    {
+      name: "HOTEL",
+      name1: "HOTEL",
+      image_url: panelaHotel,
+    },
+    {
+      name: "MARFLON",
+      name1: "MARFLON",
+      description: "ANTI-ADERENTE",
+      image_url: panelaMarflon,
+    },
+    {
+      name: "FUNDIDA",
+      name1: "FUNDIDA",
+      image_url: panelaFundida,
+    },
+    {
+      name: "CABO",
+      name1: "CABO",
+      description: "MADEIRA",
+      image_url: panelaCaboMadeira,
+    },
+    {
+      name: "EXTRA",
+      name1: "EXTRA",
+      image_url: panelaExtra,
+    },
+    {
+      name: "PRESENTES",
+      name1: "PRESENTES",
+      image_url: panelaPresente,
+    },
+    {
+      name: "VISION",
+      name1: "VISION",
+      image_url: vision,
+    },
+    {
+      name: "Tampa de Vidro",
+      name1: "Tampa de Vidro",
+      image_url: tampaVidro,
+    },
+    {
+      name: "Panela de Pressão",
+      name1: "Panela de Pressao",
+      image_url: pressao,
+    },
+  ],
+};
